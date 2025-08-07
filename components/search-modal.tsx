@@ -13,11 +13,20 @@ interface SearchModalProps {
   onClose: () => void
 }
 
+interface MenuItem {
+  name: string
+  price: string
+  description: string
+  image: string
+  category: string
+  rating: number
+}
+
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [searchQuery, setSearchQuery] = useState("")
 
   // All menu items for search
-  const allMenuItems = [
+  const allMenuItems: MenuItem[] = [
     {
       name: "Espresso",
       price: "$3.50",
@@ -125,9 +134,9 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
       item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.category.toLowerCase().includes(searchQuery.toLowerCase())
     )
-  }, [searchQuery])
+  }, [searchQuery, allMenuItems])
 
-  const handleItemClick = (item: any) => {
+  const handleItemClick = () => {
     // Scroll to menu section and close search
     document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })
     onClose()
@@ -180,7 +189,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               </div>
             ) : filteredItems.length === 0 ? (
               <div className="text-center py-8">
-                <p className="text-gray-500">No items found for "{searchQuery}"</p>
+                <p className="text-gray-500">No items found for &quot;{searchQuery}&quot;</p>
                 <p className="text-sm text-gray-400 mt-2">Try searching for coffee, pastries, or sandwiches</p>
               </div>
             ) : (
@@ -189,7 +198,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 {filteredItems.map((item, index) => (
                   <div
                     key={index}
-                    onClick={() => handleItemClick(item)}
+                    onClick={handleItemClick}
                     className="flex items-center gap-4 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                   >
                     <Image

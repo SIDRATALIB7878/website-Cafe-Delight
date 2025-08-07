@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Mail, CheckCircle } from "lucide-react"
+import { Mail, CheckCircle } from 'lucide-react'
 
 interface NewsletterModalProps {
   isOpen: boolean
@@ -38,7 +38,7 @@ export default function NewsletterModal({ isOpen, onClose }: NewsletterModalProp
           {isSubscribed ? (
             <div className="text-center space-y-4">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
-              <p className="text-gray-600">You've successfully subscribed to our newsletter!</p>
+              <p className="text-gray-600">You&apos;ve successfully subscribed to our newsletter!</p>
             </div>
           ) : (
             <>
