@@ -1,0 +1,25 @@
+/* Custom background patterns */
+.coffee-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/g%3E%3E%3C/svg%3E");
+}
+
+.dots-pattern {
+  background-image: radial-gradient(circle, #f59e0b 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: #fef3c7;
+}
+
+.waves-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23f59e0b' points='50 0 60 40 100 50 60 60 50 100 40 60 0 50 40 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Full page background */
+.page-background {
+  background-image: linear-gradient(45deg, rgba(245, 158, 11, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(245, 158, 11, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(245, 158, 11, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(245, 158, 11, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
